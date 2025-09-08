@@ -1,0 +1,123 @@
+*:root{
+    --primary-color: #393E46;
+    --secondary-color: #948979;
+    --font-color: #DFD0B8;
+    --background-color: #222831;
+    --border-radius: 5px;
+    --padding: 10px;
+    --margin: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* container of button */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+/* all 9 boxes */
+.box {
+    width: 100px;
+    height: 100px;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Disable pointer events when game is over */
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Reset button */
+.reset {
+    margin-top: 20px;
+}
+#reset {
+    padding: var(--padding);
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #697565;
+    color: #181C14;
+    border: none;
+    border-radius: var(--border-radius);
+}
+#reset:hover {
+    background-color: #4A5A52;
+    color: #FFF4B7;
+}
+
+/* Message display */
+.message {
+    margin-top: 20px;
+}
+#message {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+/* hide message if not winner */
+.hidden {
+    display: none;
+}
+
+/* Choose type button */
+.chooseType {
+    margin-top: 20px;
+}
+#X, #O {
+    padding: var(--padding);
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #697565;
+    color: #181C14;
+    border: none;
+    border-radius: var(--border-radius);
+    margin: 0 10px;
+}
+#X:hover, #O:hover {
+    background-color: #4A5A52;
+    color: #FFF4B7;
+}
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 8px;
+    }
+    .box {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5em;
+    }
+    #reset, #X, #O {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+/* End of CSS */
